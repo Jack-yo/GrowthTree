@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>任务树接口文档 | 成长树</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="成长树技术文档">
+    <link rel="preload" href="/GrowthTree/assets/css/0.styles.c062e8eb.css" as="style"><link rel="preload" href="/GrowthTree/assets/js/app.0dbe3787.js" as="script"><link rel="preload" href="/GrowthTree/assets/js/2.1b3b3f11.js" as="script"><link rel="preload" href="/GrowthTree/assets/js/6.988178ac.js" as="script"><link rel="prefetch" href="/GrowthTree/assets/js/3.d1516957.js"><link rel="prefetch" href="/GrowthTree/assets/js/4.685e2bcc.js"><link rel="prefetch" href="/GrowthTree/assets/js/5.978db2e6.js"><link rel="prefetch" href="/GrowthTree/assets/js/7.f8083ad7.js">
+    <link rel="stylesheet" href="/GrowthTree/assets/css/0.styles.c062e8eb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-navbar"><!----> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/GrowthTree/" class="sidebar-link">成长树平台介绍</a></li><li><a href="/GrowthTree/任务树接口文档.html" class="active sidebar-link">任务树接口文档</a></li><li><a href="/GrowthTree/单一任务树接口文档.html" class="sidebar-link">单一任务树接口文档</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="任务树接口文档"><a href="#任务树接口文档" class="header-anchor">#</a> 任务树接口文档</h1> <p><strong>简要描述</strong></p> <ul><li>任务树页面的接口</li></ul> <p><strong>请求URL</strong></p> <ul><li>/growthtree/login</li></ul> <p><strong>请求方式</strong></p> <ul><li>post</li></ul> <p><strong>参数</strong></p> <table><thead><tr><th style="text-align:left;">参数名</th> <th style="text-align:right;">必选</th> <th style="text-align:center;">类型</th> <th style="text-align:center;">说明</th></tr></thead> <tbody><tr><td style="text-align:left;">skey</td> <td style="text-align:right;">必选</td> <td style="text-align:center;">string</td> <td style="text-align:center;">登陆态</td></tr> <tr><td style="text-align:left;">state</td> <td style="text-align:right;">必选</td> <td style="text-align:center;">string</td> <td style="text-align:center;">状态检验，确保整个oauth流程是同一个用户在进行操作</td></tr></tbody></table> <p><strong>返回示例</strong></p> <div class="language- extra-class"><pre><code>{
+    &quot;errcode&quot;:&quot;0&quot;,
+    &quot;username&quot;:&quot;TOM&quot;,
+    &quot;profile&quot;:&quot;url&quot;,
+    &quot;skey&quot;:&quot;0122edd7-41fd-4eca-aba2-e0b10a7266d3&quot;
+    &quot;state&quot;:&quot;uhdashfkjsh&quot;
+    &quot;info&quot;:[{
+        &quot;type&quot;:&quot;web&quot;,
+        &quot;deadline&quot;:&quot;deadline1&quot;,	     
+        &quot;name&quot;:&quot;JS&quot;},
+		{
+		&quot;type&quot;:&quot;Andriod&quot;,
+        &quot;deadline&quot;:&quot;deadline2&quot;,	     
+        &quot;name&quot;:&quot;JAVA&quot;
+		}
+       ]
+ }
+</code></pre></div><ul><li>返回参数说明</li></ul> <table><thead><tr><th style="text-align:left;">参数名</th> <th style="text-align:right;">类型</th> <th style="text-align:center;">说明</th></tr></thead> <tbody><tr><td style="text-align:left;">errcode</td> <td style="text-align:right;">string</td> <td style="text-align:center;">错误码，10为请求正常</td></tr> <tr><td style="text-align:left;">username</td> <td style="text-align:right;">string</td> <td style="text-align:center;">用户姓名</td></tr> <tr><td style="text-align:left;">profile</td> <td style="text-align:right;">string</td> <td style="text-align:center;">图片url</td></tr> <tr><td style="text-align:left;">info</td> <td style="text-align:right;">Array</td> <td style="text-align:center;">任务树信息</td></tr> <tr><td style="text-align:left;">type</td> <td style="text-align:right;">string</td> <td style="text-align:center;">任务树主题</td></tr> <tr><td style="text-align:left;">deadline</td> <td style="text-align:right;">string</td> <td style="text-align:center;">截止时间戳</td></tr> <tr><td style="text-align:left;">name</td> <td style="text-align:right;">string</td> <td style="text-align:center;">任务树名字</td></tr></tbody></table> <ul><li>接口错误说明</li></ul> <table><thead><tr><th style="text-align:left;">错误码</th> <th style="text-align:right;">错误地方</th> <th style="text-align:center;">解释</th></tr></thead> <tbody><tr><td style="text-align:left;">11</td> <td style="text-align:right;">FrontService</td> <td style="text-align:center;">请求超时，code过期</td></tr> <tr><td style="text-align:left;">12</td> <td style="text-align:right;">OauthService</td> <td style="text-align:center;">请求错误，code错误</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/GrowthTree/" class="prev router-link-active">
+        成长树平台介绍
+      </a></span> <span class="next"><a href="/GrowthTree/单一任务树接口文档.html">
+        单一任务树接口文档
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/GrowthTree/assets/js/app.0dbe3787.js" defer></script><script src="/GrowthTree/assets/js/2.1b3b3f11.js" defer></script><script src="/GrowthTree/assets/js/6.988178ac.js" defer></script>
+  </body>
+</html>
