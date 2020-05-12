@@ -1,6 +1,9 @@
 module.exports = {
   title: '成长树',
   description: '成长树技术文档',
+  dest: './dist',
+  theme:'@vuepress/theme-default',
+  base: '/GrowthTree',
   
   themeConfig: {
     sidebar: [
